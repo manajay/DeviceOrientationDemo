@@ -23,6 +23,7 @@
 		AE6517241E5D45EF0010BD40 /* StreamLiveController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6517231E5D45EF0010BD40 /* StreamLiveController.swift */; };
 		AE6517261E5D877D0010BD40 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6517251E5D877D0010BD40 /* UIButton+Extension.swift */; };
 		AE6517281E5D8D710010BD40 /* DeviceConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6517271E5D8D710010BD40 /* DeviceConst.swift */; };
+		AE65172A1E5D91790010BD40 /* BaseSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6517291E5D91790010BD40 /* BaseSwitch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		AE6517231E5D45EF0010BD40 /* StreamLiveController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamLiveController.swift; sourceTree = "<group>"; };
 		AE6517251E5D877D0010BD40 /* UIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		AE6517271E5D8D710010BD40 /* DeviceConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceConst.swift; sourceTree = "<group>"; };
+		AE6517291E5D91790010BD40 /* BaseSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseSwitch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				AE6516EB1E5D3AF00010BD40 /* BaseNavigationController.swift */,
+				AE6517291E5D91790010BD40 /* BaseSwitch.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -452,6 +455,7 @@
 				AE65171B1E5D3AF00010BD40 /* ModuleAController.swift in Sources */,
 				AE65171F1E5D3AF00010BD40 /* ModuleMController.swift in Sources */,
 				AE65171D1E5D3AF00010BD40 /* ModuleCController.swift in Sources */,
+				AE65172A1E5D91790010BD40 /* BaseSwitch.swift in Sources */,
 				AE6517201E5D3AF00010BD40 /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

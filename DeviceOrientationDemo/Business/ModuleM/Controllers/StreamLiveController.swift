@@ -8,22 +8,18 @@
 
 import UIKit
 
-enum ScreenOrientation {
-  case portrait,landscapeRight
-}
-
 class StreamLiveController: UIViewController {
 
   var orientation:ScreenOrientation = .landscapeRight
   fileprivate var allowRotate = false
 
-  lazy var startButton: UIButton = {
+  fileprivate lazy var startButton: UIButton = {
     let button = UIButton.button(with: "StartLive")
     button.addTarget(self, action: #selector(StreamLiveController.startLive), for: .touchUpInside)
     return button
   }()
   
-  lazy var closeButton: UIButton = {
+  fileprivate lazy var closeButton: UIButton = {
     let button = UIButton.button(with: "dissmiss")
     button.addTarget(self, action: #selector(StreamLiveController.closeThisController), for: .touchUpInside)
     return button

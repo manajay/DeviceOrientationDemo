@@ -8,13 +8,27 @@
 
 import UIKit
 
+enum ScreenOrientation {
+  case portrait,landscapeRight
+}
+
 class ModuleMController: UIViewController {
   
-  lazy var presentStreamButton: UIButton = {
-    let button = UIButton.button(with: "开始推流")
+  fileprivate lazy var presentStreamButton: UIButton = {
+    let button = UIButton.button(with: "横屏推流")
     button.addTarget(self, action: #selector(ModuleMController.startLive), for: .touchUpInside)
     return button
   }()
+  
+  fileprivate lazy var streamOrientationSwitch: BaseSwitch = {
+    let streamOrientationSwitch = BaseSwitch(callback: { (isOn) in
+      self.updatePresentStreamButton(isOn: isOn)
+    })
+    streamOrientationSwitch.isOn = true
+    return streamOrientationSwitch
+  }()
+  
+  fileprivate var orientation: ScreenOrientation = .landscapeRight
   
   convenience init() {
     self.init(nibName: nil, bundle: nil)
@@ -42,17 +56,25 @@ extension ModuleMController {
   private func setupUI() {
     view.backgroundColor = UIColor.random
     view.addSubview(presentStreamButton)
-    
+    view.addSubview(streamOrientationSwitch)
+
     let padding: CGFloat = 14
     let presentStreamButtonHeight: CGFloat = 40
     
-    presentStreamButton.frame = CGRect(x: padding, y: kScreenHeight - padding - presentStreamButtonHeight - kTabbarHeight - kStatusHeight, width: kScreenWidth - 2 * padding, height: presentStreamButtonHeight)
+    presentStreamButton.frame = CGRect(x: padding, y: kScreenHeight - padding - presentStreamButtonHeight - kTabbarHeight - kStatusHeight, width: kScreenWidth - 2 * padding - 100 , height: presentStreamButtonHeight)
+    streamOrientationSwitch.frame = CGRect(x: presentStreamButton.frame.maxX + 20, y: presentStreamButton.frame.midY - 15.5 , width: 51, height: 31)
+    
   }
   
   private func setupNavigation() {
     navigationItem.title = "Modal模块"
   }
   
+  fileprivate func  updatePresentStreamButton( isOn: Bool) {
+    let title = isOn ? "横屏推流" : "竖屏推流"
+    presentStreamButton.setTitle(title, for: .normal)
+    orientation = isOn ? .landscapeRight : .portrait
+  }
   
 }
 
@@ -62,6 +84,7 @@ extension ModuleMController {
   @objc fileprivate func startLive() {
     debugPrint("开始推流")
     let streamVC = StreamLiveController()
+    streamVC.orientation = orientation
     present(streamVC, animated: true, completion: nil)
   }
 }
