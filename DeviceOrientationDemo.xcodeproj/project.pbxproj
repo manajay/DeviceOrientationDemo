@@ -20,6 +20,9 @@
 		AE6517201E5D3AF00010BD40 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6517111E5D3AF00010BD40 /* UIColor+Extension.swift */; };
 		AE6517211E5D3AF00010BD40 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE6517121E5D3AF00010BD40 /* Info.plist */; };
 		AE6517221E5D3AF00010BD40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE6517141E5D3AF00010BD40 /* Assets.xcassets */; };
+		AE6517241E5D45EF0010BD40 /* StreamLiveController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6517231E5D45EF0010BD40 /* StreamLiveController.swift */; };
+		AE6517261E5D877D0010BD40 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6517251E5D877D0010BD40 /* UIButton+Extension.swift */; };
+		AE6517281E5D8D710010BD40 /* DeviceConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6517271E5D8D710010BD40 /* DeviceConst.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +40,9 @@
 		AE6517111E5D3AF00010BD40 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		AE6517121E5D3AF00010BD40 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE6517141E5D3AF00010BD40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AE6517231E5D45EF0010BD40 /* StreamLiveController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamLiveController.swift; sourceTree = "<group>"; };
+		AE6517251E5D877D0010BD40 /* UIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		AE6517271E5D8D710010BD40 /* DeviceConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceConst.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -310,6 +316,7 @@
 			isa = PBXGroup;
 			children = (
 				AE65170A1E5D3AF00010BD40 /* ModuleMController.swift */,
+				AE6517231E5D45EF0010BD40 /* StreamLiveController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -338,6 +345,7 @@
 		AE65170E1E5D3AF00010BD40 /* Const */ = {
 			isa = PBXGroup;
 			children = (
+				AE6517271E5D8D710010BD40 /* DeviceConst.swift */,
 			);
 			path = Const;
 			sourceTree = "<group>";
@@ -346,6 +354,7 @@
 			isa = PBXGroup;
 			children = (
 				AE6517111E5D3AF00010BD40 /* UIColor+Extension.swift */,
+				AE6517251E5D877D0010BD40 /* UIButton+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -432,9 +441,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE65171E1E5D3AF00010BD40 /* ModuleDController.swift in Sources */,
+				AE6517241E5D45EF0010BD40 /* StreamLiveController.swift in Sources */,
 				AE65171A1E5D3AF00010BD40 /* MainController.swift in Sources */,
 				AE6517181E5D3AF00010BD40 /* BaseNavigationController.swift in Sources */,
 				AE65171C1E5D3AF00010BD40 /* ModuleBController.swift in Sources */,
+				AE6517281E5D8D710010BD40 /* DeviceConst.swift in Sources */,
+				AE6517261E5D877D0010BD40 /* UIButton+Extension.swift in Sources */,
 				AE6517191E5D3AF00010BD40 /* ModuleHelper.swift in Sources */,
 				AE6517151E5D3AF00010BD40 /* AppDelegate.swift in Sources */,
 				AE65171B1E5D3AF00010BD40 /* ModuleAController.swift in Sources */,
