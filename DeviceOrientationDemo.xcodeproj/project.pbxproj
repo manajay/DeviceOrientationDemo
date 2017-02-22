@@ -73,7 +73,6 @@
 				AE6516E41E5D3AF00010BD40 /* Base.lproj */,
 				AE6516E91E5D3AF00010BD40 /* Business */,
 				AE65170E1E5D3AF00010BD40 /* Const */,
-				AE65170F1E5D3AF00010BD40 /* Database */,
 				AE6517101E5D3AF00010BD40 /* Extension */,
 				AE6517121E5D3AF00010BD40 /* Info.plist */,
 				AE6517131E5D3AF00010BD40 /* Resource */,
@@ -341,13 +340,6 @@
 			children = (
 			);
 			path = Const;
-			sourceTree = "<group>";
-		};
-		AE65170F1E5D3AF00010BD40 /* Database */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Database;
 			sourceTree = "<group>";
 		};
 		AE6517101E5D3AF00010BD40 /* Extension */ = {
