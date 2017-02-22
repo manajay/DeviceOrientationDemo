@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE1F12EA1E5DE0AF00DB0E87 /* VideoPlayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1F12E91E5DE0AF00DB0E87 /* VideoPlayController.swift */; };
+		AE1F12EC1E5DE19A00DB0E87 /* VideoPlayContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1F12EB1E5DE19A00DB0E87 /* VideoPlayContentView.swift */; };
 		AE6517151E5D3AF00010BD40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6516E31E5D3AF00010BD40 /* AppDelegate.swift */; };
 		AE6517161E5D3AF00010BD40 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE6516E51E5D3AF00010BD40 /* LaunchScreen.storyboard */; };
 		AE6517181E5D3AF00010BD40 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6516EB1E5D3AF00010BD40 /* BaseNavigationController.swift */; };
@@ -27,6 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AE1F12E91E5DE0AF00DB0E87 /* VideoPlayController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPlayController.swift; sourceTree = "<group>"; };
+		AE1F12EB1E5DE19A00DB0E87 /* VideoPlayContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPlayContentView.swift; sourceTree = "<group>"; };
 		AE6516CD1E5D2C0E0010BD40 /* DeviceOrientationDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeviceOrientationDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE6516E31E5D3AF00010BD40 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE6516E61E5D3AF00010BD40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -320,6 +324,7 @@
 			children = (
 				AE65170A1E5D3AF00010BD40 /* ModuleMController.swift */,
 				AE6517231E5D45EF0010BD40 /* StreamLiveController.swift */,
+				AE1F12E91E5DE0AF00DB0E87 /* VideoPlayController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -341,6 +346,7 @@
 		AE65170D1E5D3AF00010BD40 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				AE1F12EB1E5DE19A00DB0E87 /* VideoPlayContentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -443,6 +449,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE1F12EA1E5DE0AF00DB0E87 /* VideoPlayController.swift in Sources */,
 				AE65171E1E5D3AF00010BD40 /* ModuleDController.swift in Sources */,
 				AE6517241E5D45EF0010BD40 /* StreamLiveController.swift in Sources */,
 				AE65171A1E5D3AF00010BD40 /* MainController.swift in Sources */,
@@ -450,6 +457,7 @@
 				AE65171C1E5D3AF00010BD40 /* ModuleBController.swift in Sources */,
 				AE6517281E5D8D710010BD40 /* DeviceConst.swift in Sources */,
 				AE6517261E5D877D0010BD40 /* UIButton+Extension.swift in Sources */,
+				AE1F12EC1E5DE19A00DB0E87 /* VideoPlayContentView.swift in Sources */,
 				AE6517191E5D3AF00010BD40 /* ModuleHelper.swift in Sources */,
 				AE6517151E5D3AF00010BD40 /* AppDelegate.swift in Sources */,
 				AE65171B1E5D3AF00010BD40 /* ModuleAController.swift in Sources */,
@@ -610,6 +618,7 @@
 				AE6516E11E5D2C0E0010BD40 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

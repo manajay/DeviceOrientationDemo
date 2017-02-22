@@ -20,6 +20,12 @@ class ModuleMController: UIViewController {
     return button
   }()
   
+  fileprivate lazy var videoPlayButton: UIButton = {
+    let button = UIButton.button(with: "视频播放-自动横屏")
+    button.addTarget(self, action: #selector(ModuleMController.playVideo), for: .touchUpInside)
+    return button
+  }()
+  
   fileprivate lazy var streamOrientationSwitch: BaseSwitch = {
     let streamOrientationSwitch = BaseSwitch(callback: { (isOn) in
       self.updatePresentStreamButton(isOn: isOn)
@@ -57,13 +63,17 @@ extension ModuleMController {
     view.backgroundColor = UIColor.random
     view.addSubview(presentStreamButton)
     view.addSubview(streamOrientationSwitch)
+    view.addSubview(videoPlayButton)
 
     let padding: CGFloat = 14
-    let presentStreamButtonHeight: CGFloat = 40
+    let buttonHeight: CGFloat = 40
     
-    presentStreamButton.frame = CGRect(x: padding, y: kScreenHeight - padding - presentStreamButtonHeight - kTabbarHeight - kStatusHeight, width: kScreenWidth - 2 * padding - 100 , height: presentStreamButtonHeight)
+    presentStreamButton.frame = CGRect(x: padding, y: kScreenHeight - padding - buttonHeight - kTabbarHeight - kStatusHeight, width: kScreenWidth - 2 * padding - 100 , height: buttonHeight)
     streamOrientationSwitch.frame = CGRect(x: presentStreamButton.frame.maxX + 20, y: presentStreamButton.frame.midY - 15.5 , width: 51, height: 31)
     
+    
+    videoPlayButton.frame = CGRect(x: padding, y: presentStreamButton.frame.minY - buttonHeight - padding, width: kScreenWidth - 2 * padding , height: buttonHeight)
+
   }
   
   private func setupNavigation() {
@@ -87,6 +97,13 @@ extension ModuleMController {
     streamVC.orientation = orientation
     present(streamVC, animated: true, completion: nil)
   }
+  
+  @objc fileprivate func playVideo() {
+    debugPrint("观看视频")
+    let videoPlayVC = VideoPlayController()
+    navigationController?.pushViewController(videoPlayVC, animated: true)
+  }
+  
 }
 
 // MARK: - Gesture

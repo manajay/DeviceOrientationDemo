@@ -84,6 +84,21 @@ extension StreamLiveController {
   
 }
 
+
+// MARK: - Actions
+extension StreamLiveController {
+  
+  @objc fileprivate func startLive() {
+    debugPrint("Sart")
+  }
+  
+  @objc fileprivate func closeThisController() {
+    debugPrint("dissmiss")
+    dismiss(animated: true, completion: nil)
+  }
+  
+}
+
 // MARK: - Orientation
 extension StreamLiveController {
   
@@ -128,19 +143,4 @@ extension StreamLiveController {
     UIDevice.orientation(to: orientation)
     allowRotate = false
   }
-}
-
-
-// MARK: - Actions
-extension StreamLiveController {
-  
-  @objc fileprivate func startLive() {
-    debugPrint("Sart")
-  }
-  
-  @objc fileprivate func closeThisController() {
-    debugPrint("dissmiss")
-    dismiss(animated: true, completion: nil)
-  }
-  
 }
