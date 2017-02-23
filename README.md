@@ -1,7 +1,5 @@
 ## DeviceOrientationDemo
 
-I am an iOS developer and currently learning Swift.
-
 ## Contents 
 That's a demo about how to change orientation of the iPhone smoothly
 
@@ -31,6 +29,10 @@ Supported orientations has no common orientation with the application,
 and [UIAlertController shouldAutorotate] is returning YES
 ```
 
+* 横屏进入首页时的一个Bug (打开了锁屏开关,不锁屏)
+
+![Bug-2](./LandscapeBug.png)
+
 ## Reference
 
 [1> iOS 开发技巧 - 手动控制屏幕UI方向](https://eliyar.biz/ios-manual-change-screen-orientation/)
@@ -39,6 +41,9 @@ and [UIAlertController shouldAutorotate] is returning YES
 
 
 ## Reach Me ##
+
+I am an iOS developer and currently learning Swift.
+
 Weibo: [@manajay](http://weibo.com/manajay)
 Twitter: [@manajay](https://twitter.com/Manajay_dlj)
 

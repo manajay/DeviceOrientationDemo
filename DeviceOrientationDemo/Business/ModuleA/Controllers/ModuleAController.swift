@@ -9,7 +9,7 @@
 import UIKit
 
 class ModuleAController: UIViewController {
-
+  fileprivate var allowRotate = false
 }
 
 // MARK: - UI- View Circle
@@ -19,6 +19,12 @@ extension ModuleAController {
     super.viewDidLoad()
     setupUI()
     setupNavigation()
+  }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    // 防止横屏进入的界面Bug (打开锁屏键的时候 - 不锁屏)
+    rotate(to: .portrait)
   }
   
   private func setupUI() {
@@ -36,7 +42,7 @@ extension ModuleAController {
 extension ModuleAController {
   
   override var shouldAutorotate: Bool {
-    return false
+    return allowRotate
   }
   
   override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
@@ -49,6 +55,13 @@ extension ModuleAController {
   
   override var prefersStatusBarHidden: Bool{
     return false
+  }
+  
+  // 当调用 rotate(to: UIInterfaceOrientation.landscapeLeft) 时，先允许自动旋转，然后进行屏幕旋转。再设置为不允许自动旋转。
+  fileprivate func rotate(to orientation: UIInterfaceOrientation) {
+    allowRotate = true
+    UIDevice.orientation(to: orientation)
+    allowRotate = false
   }
   
 }
