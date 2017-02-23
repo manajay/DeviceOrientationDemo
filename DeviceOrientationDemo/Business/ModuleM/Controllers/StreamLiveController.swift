@@ -19,10 +19,19 @@ class StreamLiveController: UIViewController {
     return button
   }()
   
-  fileprivate lazy var closeButton: UIButton = {
-    let button = UIButton.button(with: "dissmiss")
-    button.addTarget(self, action: #selector(StreamLiveController.closeThisController), for: .touchUpInside)
+  fileprivate lazy var rotateOrientationButton: UIButton = {
+    let button = UIButton.button(with: "rotate")
+    button.setTitle("Switch", for: .highlighted)
+    button.addTarget(self, action: #selector(StreamLiveController.rotateOrientation), for: .touchUpInside)
     return button
+  }()
+  
+  fileprivate lazy var streamOrientationSwitch: BaseSwitch = {
+    let streamOrientationSwitch = BaseSwitch(callback: { (isOn) in
+      self.updateOrientation(isOn: isOn)
+    })
+    streamOrientationSwitch.isOn = (self.orientation == .landscapeRight)
+    return streamOrientationSwitch
   }()
   
   convenience init() {
@@ -46,7 +55,8 @@ extension StreamLiveController {
   
   private func setupUI() {
     view.addSubview(startButton)
-    view.addSubview(closeButton)
+    view.addSubview(rotateOrientationButton)
+    view.addSubview(streamOrientationSwitch)
     view.backgroundColor = UIColor.random
     setupSubviews()
   }
@@ -59,10 +69,13 @@ extension StreamLiveController {
 
     if orientation == .portrait {
       startButton.frame = CGRect(x: padding, y: kScreenHeight - padding - startButtonHeight, width: kScreenWidth - 2 * padding , height: startButtonHeight)
-      closeButton.frame = CGRect(x: kScreenWidth - padding - closeButtonWidth, y: padding, width: closeButtonWidth, height: closeButtonWidth)
+      rotateOrientationButton.frame = CGRect(x: kScreenWidth - padding - closeButtonWidth, y: padding, width: closeButtonWidth, height: closeButtonWidth)
+      streamOrientationSwitch.frame = CGRect(x: rotateOrientationButton.frame.midX - 25.5, y: rotateOrientationButton.frame.maxY + padding, width: 51, height: 31)
     } else {
       startButton.frame = CGRect(x: padding, y: kScreenWidth - padding - startButtonHeight, width: kScreenHeight - 2 * padding, height: startButtonHeight)
-      closeButton.frame = CGRect(x: kScreenHeight - padding - closeButtonWidth, y: padding, width: closeButtonWidth, height: closeButtonWidth)
+      rotateOrientationButton.frame = CGRect(x: kScreenHeight - padding - closeButtonWidth, y: padding, width: closeButtonWidth, height: closeButtonWidth)
+      streamOrientationSwitch.frame = CGRect(x: rotateOrientationButton.frame.midX - 25.5, y: rotateOrientationButton.frame.maxY + padding, width: 51, height: 31)
+
     }
     
   }
@@ -92,11 +105,22 @@ extension StreamLiveController {
     debugPrint("Sart")
   }
   
-  @objc fileprivate func closeThisController() {
-    debugPrint("dissmiss")
-    dismiss(animated: true, completion: nil)
+  @objc fileprivate func rotateOrientation() {
+    debugPrint("rotateOrientation")
   }
   
+  fileprivate func  updateOrientation( isOn: Bool) {
+    orientation = isOn ? .landscapeRight : .portrait
+    rotate(to: orientation.defaultOrientation)
+  }
+  
+}
+
+// MARK: - Gesture
+extension StreamLiveController {
+  override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    dismiss(animated: true, completion: nil)
+  }
 }
 
 // MARK: - Orientation

@@ -10,6 +10,16 @@ import UIKit
 
 enum ScreenOrientation {
   case portrait,landscapeRight
+  
+  var defaultOrientation: UIInterfaceOrientation {
+    switch self {
+    case .portrait:
+      return .portrait
+    default:
+      return .landscapeRight
+    }
+  }
+  
 }
 
 class ModuleMController: UIViewController {

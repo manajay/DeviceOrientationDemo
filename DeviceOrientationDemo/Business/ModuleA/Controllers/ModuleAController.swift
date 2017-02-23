@@ -31,3 +31,24 @@ extension ModuleAController {
   
   
 }
+
+// MARK: - Orientation
+extension ModuleAController {
+  
+  override var shouldAutorotate: Bool {
+    return false
+  }
+  
+  override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+    return .portrait
+  }
+  
+  override var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation {
+    return .portrait
+  }
+  
+  override var prefersStatusBarHidden: Bool{
+    return false
+  }
+  
+}
