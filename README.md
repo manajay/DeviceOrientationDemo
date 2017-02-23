@@ -21,6 +21,16 @@ This repo focus on usage of:
 2. 如果`shouldAutorotate` 为`true` 则会进一步调用`supportedInterfaceOrientations` 来查询支持的屏幕方向。
 3. 当`Controller` 支持的方向和设备方向一致时候就进行旋转操作。
 
+## Bugs
+
+* 横屏时使用`UIAlertController`会导致该错误，解决方法：添加`UIAlertController`的`category` 重写`- (BOOL)shouldAutorotate`方法
+
+```
+//UIApplicationInvalidInterfaceOrientation
+Supported orientations has no common orientation with the application, 
+and [UIAlertController shouldAutorotate] is returning YES
+```
+
 ## Reference
 
 [1> iOS 开发技巧 - 手动控制屏幕UI方向](https://eliyar.biz/ios-manual-change-screen-orientation/)
